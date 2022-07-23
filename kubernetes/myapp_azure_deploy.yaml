@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myinsuranceapp-az
+  name: myinsuranceapp-deployment-az
   labels:
     app: myinsuranceapp-az
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: myinsuranceapp-az
@@ -15,10 +15,10 @@ spec:
         app: myinsuranceapp-az
     spec:
       imagePullSecrets:
-      - name: acr-secret
+      - name: acr-secret 
       containers:
-      - name: myinsuranceapp-az
-        image: risunmyinsuranceapp.azurecr.io/myinsuranceapp:v3
+      - name: myinsuranceapp-deployment-az
+        image:  risunmyinsuranceapp.azurecr.io/myinsuranceapp:v3
         ports:
         - name: http
           containerPort: 5000
