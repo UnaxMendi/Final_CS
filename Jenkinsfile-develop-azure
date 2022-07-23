@@ -40,7 +40,7 @@ pipeline {
                 //withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ]) {
                 //    sh 'docker push 618383339/final_cs:myinsuranceapp'
                 }
-                withDockerRegistry([ credentialsId: "	azure-credentials", url: "finalcsux.azurecr.io.azurecr.io" ]) {
+                withDockerRegistry([ credentialsId: "azure-credentials", url: "finalcsux.azurecr.io.azurecr.io" ]) {
                     sh 'docker push finalcsux.azurecr.io.azurecr.io/myinsuranceapp:v3'
                 }
             }
