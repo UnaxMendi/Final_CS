@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'docker',url: 'https://github.com/UnaxMendi/Final_CS.git'
+                git branch: 'develop',url: 'https://github.com/UnaxMendi/Final_CS.git'
 	        }
         }        
         stage('Requirements') {
