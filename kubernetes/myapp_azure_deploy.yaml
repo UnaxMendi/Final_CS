@@ -5,7 +5,7 @@ metadata:
   labels:
     app: myinsuranceapp-az
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: myinsuranceapp-az
