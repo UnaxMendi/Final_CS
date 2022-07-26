@@ -31,7 +31,7 @@ pipeline {
             steps {
                 echo 'creating image...'
                 //sh 'docker build -t 618383339/final_cs:myinsuranceapp -f Dockerfile .'
-                sh 'docker build -t finalcsux.azurecr.io.azurecr.io/myinsuranceapp:v3 -f Dockerfile .'
+                sh 'docker build -t finalcs.azurecr.io/myinsuranceapp:v3 -f Dockerfile .'
             }
         } 
         stage('Publish image') {
@@ -40,8 +40,8 @@ pipeline {
                 //withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ]) {
                 //    sh 'docker push 618383339/final_cs:myinsuranceapp'
                 //}
-                withDockerRegistry([ credentialsId: "azure-credentials", url: "finalcsux.azurecr.io.azurecr.io" ]) {
-                    sh 'docker push finalcsux.azurecr.io.azurecr.io/myinsuranceapp:v3'
+                withDockerRegistry([ credentialsId: "azure-credentials-CS", url: "https://finalcs.azurecr.io" ]) {
+                    sh 'docker push finalcs.azurecr.io/myinsuranceapp:v3'
                 }
             }
         }
